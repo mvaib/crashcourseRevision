@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KreditBee</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            box-sizing: border-box;
+        }
+        nav{
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            height: 80px;
+            /* border: 2px solid blue; */
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        nav div:nth-child(1){
+            /* border: 2px solid red; */
+            width: 200px;
+            height: 45px;
+
+        }
+        nav div:nth-child(1) img{
+            width: 100%;
+            height: 100%;
+        }
+        nav div:nth-child(2){
+            /* border: 2px solid green; */
+            width: 30%;
+            height: 45px;
+        }
+        nav div:nth-child(2) ul{
+            display: flex;
+            list-style: none;
+            justify-content: space-evenly;
+            gap: 10px;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+        }
+        nav div:nth-child(2) ul li{
+            font-size: 17px;
+        }
+        nav div:nth-child(2) ul li button{
+            background-color: white;
+            color: black;
+            border: 2px solid rgb(225, 157, 31);
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        #cards div:nth-child(1) h2{
+            font-size: 50px;
+            text-align: center;
+        }
+        .cards-container{
+            width: 70%;
+            /* border: 2px solid blue; */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 50px;
+            column-gap: 30px;
+            padding: 10px;
+            padding: 30px;
+            margin: auto;
+        }
+        .cards-container div{
+            /* border: 2px solid blue; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+            /* width: 100%; */
+            padding: 20px;
+        }
+        .cards-container div div:nth-child(1){
+            border: 1px solid rgb(213, 164, 17);
+            width: fit-content;
+            height: fit-content;
+        }
+        .cards-container div div:nth-child(1) img{
+            width: 100%;
+            height: 100%;
+        }
+        #cards>div:nth-child(2){
+            /* border: 2px solid red; */
+            padding: 40px;
+        }
+        #cards>div:nth-child(2) h2{
+            font-size: 30px;
+        }
+        #cards>div:nth-child(2)>div{
+            width: 80%;
+            /* border: 2px solid green; */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 50px;
+            column-gap: 30px;
+            padding: 10px;
+        }
+        #cards>div:nth-child(2)>div>div{
+            /* border: 2px solid red; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        }
+        #cards>div:nth-child(2)>div>div>div:nth-child(1){
+            /* border: 2px solid green; */
+            width: 100%;
+            height: 250px;
+        }
+        #cards>div:nth-child(2)>div>div>div:nth-child(1) img{
+            width: 100%;
+            height: 100%;
+        }
+        #cards>div:nth-child(2)>div>div>div:nth-child(2){
+            padding: 20px;
+        }
+        #cards>div:nth-child(2)>div>div>div:nth-child(2)>p:nth-child(1){
+            border: 1px solid rgb(114, 171, 236);
+            width: fit-content;
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px;
+            background: linear-gradient(90deg, rgba(114,171,236,1) 0%, rgba(255,255,255,1) 100%);
+        }
+        #form{
+            width: 100%;
+            height: auto;
+            background-color: rgb(255, 219, 102);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+        }
+        form{
+            width: 20%;
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            padding: 50px;
+            padding-top: 20px;
+            background-color: rgb(244, 244, 244);
+            margin-bottom: 150px;
+        }
+        form div{
+            /* border: 2px solid red; */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* padding: 10px; */
+        }
+        form div label{
+            font-size: 20px;
+            /* border: 2px solid blue; */
+            width: 90%;
+            padding: 10px;
+        }
+        form div input{
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        form button{
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 17px;
+            background-color: rgb(54, 160, 210);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        form h2, p {
+            margin: 0;
+            padding: 5px;
+            margin: 5px;
+        }
+        form>p:nth-child(1){
+            width: 100%;
+            font-size: 20px;
+            text-align: end;
+            font-weight: bold;
+            cursor: pointer;
+            /* border: 2px solid blue; */
+        }
+        span{
+            color: rgb(228, 50, 50);
+        }
+        #form>div{
+            width: 100%;
+            background-color: rgb(22, 22, 22);
+            color: rgb(233, 233, 233);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <header>
+            <nav>
+                <div><img src="https://ik.imagekit.io/krazybee/kreditbee_in/logo_horizontal_BNqOuZWg_.svg" alt=""></div>
+                <div>
+                    <ul>
+                        <li>Loans</li>
+                        <li>Calculators</li>
+                        <li>Credit Report</li>
+                        <li>Refer & Earn</li>
+                        <li>Repayment</li>
+                        <li><button>Sign In</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section id="cards">
+            <div>
+                <h2>Why choose KreditBee?</h2>
+                <div class="cards-container">
+                    <div>
+                        <div>
+                            <img src="https://ik.imagekit.io/krazybee/kreditbee_in/banners/New_Web/ic-1.svg" alt="">
+                        </div>
+                        <p>Lower Interest Rates</p>
+                        <p>Get loans for multiple purposes at lower interest rates to suit your needs</p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="https://ik.imagekit.io/krazybee/kreditbee_in/banners/New_Web/ic-2.svg" alt="">
+                        </div>
+                        <p>Fast Processing and Disbursal</p>
+                        <p>Apply online, check your eligibility and get money directly in your bank in 10 minutes</p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="https://ik.imagekit.io/krazybee/kreditbee_in/banners/New_Web/ic-3.svg" alt="">
+                        </div>
+                        <p>Easy Repayment Options</p>
+                        <p>Repay the loan amount in easy EMI with flexible tenure options</p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="https://ik.imagekit.io/krazybee/kreditbee_in/banners/New_Web/ic-4.svg" alt="">
+                        </div>
+                        <p>100% Paperless</p>
+                        <p>No paperwork or physical documentation is required, and you can apply and get a personal loan completely online.</p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="https://ik.imagekit.io/krazybee/kreditbee_in/banners/New_Web/ic-5.svg" alt="">
+                        </div>
+                        <p>Safe, Secure and Transparent</p>
+                        <p>Our loan application process is fully secured and safe and there are no hidden charges.</p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="https://ik.imagekit.io/krazybee/kreditbee_in/banners/New_Web/ic-6.svg" alt="">
+                        </div>
+                        <p>Collateral Free</p>
+                        <p>No collateral is required to apply for our personal loans.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Fresh from the blog -></h2>
+                <div>
+                    <div>
+                        <div>
+                            <img src="https://www.kreditbee.in/blog/content/images/size/w1000/2024/08/Blog-Image_Aug_44_Durga-Puja-in-India.png" alt="">
+                        </div>
+                        <div>
+                            <p>Indian Holidays</p>
+                            <b>Durga Puja in India</b>
+                            <p>Durga Puja, one of the most important festivals in India, is an annual festival of Lord Shiva.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="https://www.kreditbee.in/blog/content/images/size/w1000/2024/08/Blog-Image_Aug_43_Good-Friday.png" alt="">
+                        </div>
+                        <div>
+                            <p>Indian Holidays</p>
+                            <b>Good Friday</b>
+                            <p>Good Friday is an annual religious holiday in India.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="https://www.kreditbee.in/blog/content/images/size/w1000/2024/08/Blog-Image_Aug_42_Republic-Day-Celebration-in-India.png" alt="">
+                        </div>
+                        <div>
+                            <p>Indian Holidays</p>
+                            <b>Republic Day Celebration in India</b>
+                            <p>True love of India, Republic Day, is a national holiday in India.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="form">
+            <form>
+                <p>X</p>
+                <h2>Create Account</h2>
+                <p>Already have an account? <a href="#">Sign In</a></p>
+                <div>
+                    <label>
+                        Full Name <span>*</span> <br>
+                        <input type="text" name="" id="" placeholder="Enter your full name">
+                    </label>
+                    <label>
+                        Email address <span>*</span> <br>
+                        <input type="email" name="" id="" placeholder="Enter your email address">
+                    </label>
+                    <label>
+                        Phone Number <span>*</span> <br>
+                        <input type="number" name="" id="" placeholder="Enter your phone number">
+                    </label>
+                    <label>
+                        Referral Code (Optional) <br>
+                        <input type="text" name="" id="" placeholder="Enter referral code">
+                    </label>
+                </div>
+                <button>Submit</button>
+                <p>By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+            </form>
+            <div>
+                <p>COPYRIGHT@KREDITBEE. ALL RIGHTS RESERVED</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
