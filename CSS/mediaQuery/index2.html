@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetic Products</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #page{
+            /* width: 100%; */
+            width: auto;
+            padding: 20px;
+            /* border: 2px solid red; */
+        }
+        h2{
+            text-align: center;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 23px;
+            column-gap: 20px;
+        }
+        .container>div{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+        .container>div>div{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .container>div>div>img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .container>div>div:nth-child(2){
+            padding-top: 2%;
+            padding-bottom: 2%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            width: 100%;
+        }
+        .container>div>div:nth-child(2)>div{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            margin-right: 13px;
+            border: 2px dotted red;
+            width: fit-content;
+            padding: 5px;
+            border-radius: 10px;
+            gap: 7px;
+        }
+        .container>div>div:nth-child(2)>div>div{
+            border-left: 2px dotted red;
+            height: 20px;
+        }
+        @media all and (max-width: 1024px){
+            .container{
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .container>div>div:nth-child(2)>div{
+                font-size: 12px;
+                margin-right: 10px;
+            }
+        }
+        @media all and (max-width: 768px){
+            .container>div>div:nth-child(2)>div{
+                font-size: 10px;
+            }
+        }
+        @media all and (max-width : 633px){
+            .container{
+                width: 500px;
+                margin: auto;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .container>div>div:nth-child(2)>div{
+                font-size: 9px;
+                margin-right: 10px;
+            }
+        }
+        @media all and (max-width : 534px){
+            .container{
+                width: 100%;
+            }
+        }
+        @media all and (max-width : 375px){
+            .container>div>div:nth-child(2)>div{
+                font-size: 8px;
+                margin-right: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <h1>Cosmetic Products</h1>
+        <h2>OFFERS</h2>
+        <div class="container">
+            <div>
+                <div>
+                    <img src="https://images.sugarcosmetics.com/Promotion/5b050f83-b466-416b-89ce-f179462ac8f0.jpg" alt="">
+                </div>
+                <div>
+                    <div>PRIMER999<div></div>📋</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/0844a8f6-78e3-429d-b352-4e020f447004.jpg" alt="">
+                </div>
+                <div>
+                    <div>PRIMER999 <div></div> 📋</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://images.sugarcosmetics.com/Promotion/9b51e68a-a374-408a-ad3b-7d521346dc13.jpg" alt="">
+                </div>
+                <div>
+                    <div>PRIMER999 <div></div> 📋</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://images.sugarcosmetics.com/Promotion/5dacc47b-0505-4fa2-9ea3-d3e3b88d3f50.jpg" alt="">
+                </div>
+                <div>
+                    <div>PRIMER999 <div></div> 📋</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://images.sugarcosmetics.com/Promotion/7ee374a2-db58-4159-83c5-d8b2b02579cd.jpg" alt="">
+                </div>
+                <div>
+                    <div>PRIMER999 <div></div> 📋</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://images.sugarcosmetics.com/Promotion/63b782a7-3a1f-4424-953d-372cb8a9cca7.jpg" alt="">
+                </div>
+                <div>
+                    <div>PRIMER999 <div></div> 📋</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://images.sugarcosmetics.com/Promotion/57689980-4832-408a-b43e-593fe85dde39.jpg" alt="">
+                </div>
+                <div>
+                    <div>PRIMER999 <div></div> 📋</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
