@@ -7,7 +7,6 @@ import App from './App.jsx'
 import { MyProvider } from './appComponents/contextApi/context'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <MyProvider>
       <Router>
         <Provider>
@@ -15,5 +14,4 @@ createRoot(document.getElementById('root')).render(
         </Provider>
       </Router>
     </MyProvider>
-  </StrictMode>,
 )
