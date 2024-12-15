@@ -1,0 +1,626 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    /* border: 2px solid blue; */
+    margin: auto;
+    height: auto;
+}
+
+
+.nav-bar{
+    /* border: 2px solid blue; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: white;
+    z-index: 110;
+    padding-top: 10px;
+
+}
+.header-two-container{
+    /* border: 2px solid blue; */
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FBF9F7
+}
+.header-two-container .one ul{
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333368;
+    text-transform: uppercase;
+}
+.header-two-container .two{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.header-two-container .two button{
+    /* border: 2px solid blue; */
+    width: 80px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.header-two-container .two button img{
+    width: 100%;
+    height: 100%;
+}
+.search{
+    /* border: 2px solid green;  */
+    margin-left: 100px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.phone-icon{
+    /* border: 2px solid blue; */
+    width: 140px;
+}
+.phone-icon img{
+    width: 100%;
+}
+.search-bar{
+    /* border: 2px solid blue; */
+    width: 750px;
+ }
+ .search-input{
+     border-radius: 7px;
+     font-size: 15px;
+     color: #333368;
+     border: 1px solid #333368;
+ }
+ .alternate-search-bar{
+    display: none;
+ }
+.links{
+    /* border: 2px solid blue; */
+    margin-right: 10px;
+}
+.links ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.links ul li{
+    cursor: pointer;
+    font-size: 15px;
+    color: #333368;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links ul li i{
+    margin: 0 6px;
+}
+.links ul li:hover{
+    text-decoration: underline;
+}
+.singIn-dialog{
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.singIn-dialog form{
+    padding: 0px 50px;
+    padding-top: 20px;
+}
+.singIn-dialog .dialog-title{
+    margin-left: 50px;
+}
+.login-dialog{
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+    padding-bottom: 5px;
+}
+.dialog-title{
+    font-size: 25px;
+    margin-left: 20px;
+    color: #333368;
+    font-weight: bold;
+    margin-top: 20px;
+}
+form{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.input-addon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+.input {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+    font-size: 17px;
+    padding-left: 20px;
+}
+.create-account{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgb(216, 216, 216);
+    font-size: 18px;
+    color: black;
+}
+.sign-in{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgb(216, 216, 216);
+    font-size: 18px;
+    color: black;
+}
+.privacy{
+    color: gray;
+}
+.privacy strong{
+    text-decoration: underline;
+    color: #333368;
+}
+.referral{
+    color: gray;
+    text-decoration: underline;
+}
+
+.whatsapp{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.signin-option{
+    text-align: center;
+}
+.create-account-option{
+    text-align: center;
+}
+.signin-option strong{
+    text-decoration: underline;
+    color: #333368;
+    cursor: pointer;
+}
+.create-account-option strong{
+    text-decoration: underline;
+    color: #333368;
+    cursor: pointer;
+}
+.alternate-glassPopUp-container{
+    display: none;
+}
+.glassPopUp-container{
+    background-color: #FBF9F7;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    padding: 20px;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.glassPopUp-card{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    background-color: white;
+    gap: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: gray;
+    font-size: 15px;
+}
+.glassPopUp-card div img{
+    width: 100%;
+    height: 100%;
+}
+.glassPopUp-card-container{
+    display: block;
+}
+.glassPopUp-content{
+    position: absolute;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.glassPopUp-content div{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+.glassPopUp-content div ul{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.glassPopUp-content div ul li{
+    font-size: 13px;
+}
+.image-card-container{
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.image-card-container div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-heading{
+    width: 90%;
+    margin: auto;
+    text-transform: uppercase;
+}
+.image-heading .heading{
+    font-size: 40px;
+}
+.image-card-slider {
+    position: relative; /* Ensure the slider container is positioned */
+}
+.image-card-slider .slick-prev{
+    /* border: 2px solid blue; */
+    position: absolute;
+    left: 40px;
+    z-index: 100;
+    height: auto;
+    width: fit-content;
+}
+.image-card-slider .slick-prev::before{
+    font-size: 55px;
+    /* display: none; */
+}
+.image-card-slider .slick-next{
+    /* border: 2px solid blue; */
+    position: absolute;
+    right: 40px;
+    z-index: 100;
+    height: auto;
+    width: fit-content;
+}
+.image-card-slider .slick-next::before{
+    font-size: 55px;
+}
+
+.image-card-slider div{
+    margin-bottom: 1px;
+}
+.glass-card-slider{
+    /* border: 2px solid red; */
+    margin: 0 10px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.glass-card-slider > div{
+    /* border: 2px solid green; */
+    text-align: center;
+}
+.glass-card{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.glass-card div{
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.glass-card button{
+    border: none;
+    background-color: #56B7C3;
+    padding: 15px 50px;
+    border-radius: 10px;
+    color: #FBF9F7;
+    cursor: pointer;
+}
+.glass-card-slider .slick-prev:before{
+    /* border: 2px solid blue;   */
+    font-size: 30px;   
+    color: #333368;
+}
+.glass-card-slider .slick-next:before{
+    /* border: 2px solid blue;   */
+    font-size: 30px;   
+    color: #333368;
+}
+
+.product-container{
+    /* border: 2px solid red; */
+    background-color: #FBF9F7;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 40px;
+    column-gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.product-card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.cart-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item-image {
+    width: 400px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+.drawer-bars-btn{
+    /* border: 2px solid red; */
+    padding: 17px;
+    border-radius: 10px;
+    background-color: #333368;
+    font-size: 23px;
+    cursor: pointer;
+    color: #FBF9F7;
+    display: none;
+}
+.drawer-content{
+    padding: 20px;
+    /* border: 2px solid red; */
+}
+.drawer-body{
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.drawer-login{
+    /* border: 2px solid red; */
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.drawer-login-btn{
+    /* border: 2px solid red; */
+    width: 100%;
+    border-radius: 10px;
+    background-color:#56B7C3;
+}
+.drawer-contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #2e2e81;
+    font-weight: 600;
+}
+.accordion-item{
+    /* border: 2px solid red; */
+    padding: 10px;
+}
+.accordion-title{
+    color: #0c0c4e;
+    font-weight: 700;
+}
+.accordion-content{
+    /* border: 2px solid red; */
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #595981;
+}
+
+
+@media all and (max-width: 1792px){
+    .search{
+        width: 55%;
+    }
+}
+@media all and (max-width : 1634px){
+    .search{
+        width: 50%;
+        margin-left: -40px;
+    }
+    .search-bar{
+        width: 500px;
+    }
+}
+ @media all and (max-width : 1408px){
+    .search{
+        width: 45%;
+        margin-left: 0;
+    }
+    .search-bar{
+        width: 400px;
+    }
+}
+
+@media all and (max-width : 1231px){
+    .search{
+        width: 40%;
+    }
+    .search-bar{
+        width: 300px;
+    }
+    .image-heading .heading{
+        font-size: 25px;
+    }
+}
+ @media all and (max-width : 1225px){
+    .header-two-container .one ul{
+        gap: 12px;
+        font-size: 14px;
+    }
+    .header-two-container .two button{
+        width: 60px;
+    }
+ }
+@media all and (max-width : 1133px){
+    .drawer-bars-btn{
+        display: flex;
+        margin-right: 20px;
+    }
+    .login-link{
+        display: none;
+    }
+    .drawer-content .login-link{
+        display: flex;
+    }
+    .links ul li span{
+        display: none;
+    }
+    .links ul li i{
+        margin: 0 6px;
+        font-size: 20px;
+    }
+    .links ul{
+        gap: 10px;
+    }
+    .phone-icon{
+        display: none;
+    }
+    .drawer-content .phone-icon{
+        display: flex;
+    }
+    .search{
+        justify-content: center;
+    }
+    .search-bar{
+        display: none;
+    }
+    .alternate-search-bar{
+        display: flex;
+        margin-left: 30px;
+    }
+    .alternate-glassPopUp-container{
+        display: block;
+        margin-bottom: 20px;
+        background-color: #FBF9F7;
+    }
+    .alternate-glassPopUp-container .glassPopUp-card-container{
+        margin-left: 15px;
+    }
+    .glassPopUp-container{
+        display: none;
+    }
+    .image-heading .heading{
+        font-size: 20px;
+    }
+    .image-card-slider .slick-prev::before, .image-card-slider .slick-next::before{
+        display: none;
+    }
+}
+@media all and (max-width : 1066px){
+    .header-two-container{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+}
+
+@media all and (max-width : 889px){
+    .header-two-container .one ul{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .alternate-glassPopUp-container .alternate-glassPopUp-slider .glassPopUp-card-container .glassPopUp-card div{
+        width: auto;
+    }
+}
+@media all and (max-width : 886px){
+    .glass-card button{
+        padding: 10px 30px;
+    }
+}
+@media all and (max-width:795px){
+    .product-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .cart-item-image{
+        width: 300px;
+    }
+}
+@media all and (max-width : 663px){
+    .glass-card button{
+        padding: 8px 25px;
+    }
+    .image-heading .heading{
+        font-size: 17px;
+    }
+    .drawer-bars-btn{
+        font-size: 17px;
+        padding: 7px 10px;
+    }
+}
+@media all and (max-width: 534px){
+    .product-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .drawer-bars-btn{
+        font-size: 15px;
+        padding:  6px 8px;
+        margin-bottom: 10px;
+
+    }
+}
+@media all and (max-width: 455px){
+    .cart-item-image{
+        width: 200px;
+    }
+}
+@media all and (max-width : 413px){
+    .glass-card button{
+        padding:  5px 20px;
+    }
+}
+@media all and (max-width: 375px){
+    .image-heading .heading{
+        font-size: 15px;
+    }
+    .cart-item{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+}
