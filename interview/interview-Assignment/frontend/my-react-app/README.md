@@ -35,8 +35,8 @@ A simple yet powerful movie listing application that allows users to search for 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mvaib/interview-ass-movie-listing
-   cd movie-listing-app
+   git clone https://github.com/mvaib/crashcourseRevision/tree/main/interview/interview-Assignment/frontend/my-react-app
+   cd my-react-app
 
 Install dependencies:
 
