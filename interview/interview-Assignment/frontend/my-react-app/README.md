@@ -1,12 +1,75 @@
-# React + Vite
+# Movie Listing App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple yet powerful movie listing application that allows users to search for movies based on various parameters such as name, language, and genre.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **React**
 
-## Expanding the ESLint configuration
+### Backend
+- **Node.js**
+- **Express**
+- **Mongoose**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Database
+- **MongoDB**
+
+## Features
+
+- **Movie Search**: Allows users to search for movies by name, language, and genre.
+- **Debouncing**: Implemented debouncing technique on the search bar for improved performance and user experience.
+- **Movie Cards**: Display movie results in an organized card layout.
+
+## Installation
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v12 or later)
+- [MongoDB](https://www.mongodb.com/) (Make sure MongoDB is running)
+
+### Steps to Install
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mvaib/interview-ass-movie-listing
+   cd movie-listing-app
+
+Install dependencies:
+
+bash
+
+npm install
+
+Running the Application
+To run the application locally, use the following command:
+
+bash
+
+npm run dev
+
+Open your browser and navigate to http://localhost:5173/ to access the app.
+
+Backend Implementation
+Routes:
+POST /add: Add a new movie to the database.
+GET /movies: Retrieve all movies from the database.
+GET /search: Search for movies based on query parameters (name, language, genre).
+Frontend Implementation
+Search Bar: Users can enter search terms to filter movies.
+Debouncing: Implemented to optimize performance when searching.
+Movie Cards: Each movie is displayed in a styled card for better user experience.
+
+
+Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any improvements or suggestions.
+
+Acknowledgements
+Thanks to all the open-source libraries and frameworks that made this project possible.
+text
+
+
+
