@@ -15,11 +15,15 @@ export async function getSummary(text) {
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
-  const output = response.text();
+  let output = await response.text().trim();
+
+  // Remove any code block formatting
+  output = output.replace(/```json/g, "").replace(/```/g, "").trim();
 
   try {
     return JSON.parse(output);
-  } catch {
+  } catch (error) {
+    console.error("Failed to parse AI response:", error);
     return ["Could not parse AI response", output];
   }
 }
