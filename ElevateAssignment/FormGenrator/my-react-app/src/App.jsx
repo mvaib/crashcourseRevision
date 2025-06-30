@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./App.css"
 const schema = [
   {
     label: "Name",
@@ -120,7 +120,6 @@ function App() {
     <div style={{ maxWidth: 500, margin: "auto" }}>
       <h2>Dynamic Form</h2>
       <form
-        className="p-4 rounded bg-blue-200"
         onSubmit={handleSubmit}
         noValidate
       >
@@ -139,14 +138,12 @@ function App() {
                   name={field.name}
                   value={formData[field.name]}
                   onChange={(e) => handleChange(e, field)}
-                  className="rounded"
                 />
               ) : field.type === "select" ? (
                 <select
                   name={field.name}
                   value={formData[field.name]}
                   onChange={(e) => handleChange(e, field)}
-                  className="rounded"
                 >
                   <option value="">-- Select --</option>
                   {field.options.map((option) => (
@@ -161,7 +158,6 @@ function App() {
                   name={field.name}
                   checked={formData[field.name]}
                   onChange={(e) => handleChange(e, field)}
-                  className="rounded"
                 />
               ) : null}
             </div>
@@ -173,7 +169,7 @@ function App() {
           </div>
         ))}
 
-        <button className="rounded" type="submit">
+        <button  type="submit">
           Submit
         </button>
       </form>
