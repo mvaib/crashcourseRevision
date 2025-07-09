@@ -1,0 +1,2 @@
+export const UNSPLASH_ACCESS_KEY = 'ExUI6-JkSjNsaDxQD-xoaLEBaf39v1AagDKL_T45C1U';
+export const UNSPLASH_SECRET_KEY = 'zg7bycXLdTembrNbj4NXMwE5dyTMbNTefEEYu8SXK08'; 
