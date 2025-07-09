@@ -6,7 +6,7 @@ A React-based web application that demonstrates the use of multiple browser APIs
 
 ### Core Functionality
 - **Location-Based Image Gallery**: Automatically fetches and displays images relevant to your current location
-- **Real-Time Network Monitoring**: Shows your network status and connection type
+- **Real-Time Network Monitoring**: Shows your network status and connection type in the navbar
 - **Lazy Loading**: Images load only when they come into view for better performance
 - **Client-Side Pagination**: Navigate through images with Next/Previous buttons
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
@@ -23,8 +23,15 @@ A React-based web application that demonstrates the use of multiple browser APIs
 - **Vite** - Build tool and development server
 - **Unsplash API** - Location-based image search
 - **OpenStreetMap Nominatim** - Reverse geocoding for location names
-- **CSS Grid** - Responsive layout
+- **CSS Grid & Flexbox** - Responsive layout
 - **Modern JavaScript (ES6+)** - Async/await, destructuring, etc.
+
+## 🛠️ UI Overview & Layout
+
+- **Fixed Navbar**: At the top of the app, always visible, with the website name (left) and network status (right, with WiFi icon and color for online/offline). The navbar is styled for clarity and does not show the user's location.
+- **Centered Main Content**: The location and gallery sections are centered both vertically and horizontally in the available space below the navbar, for a clean and modern look.
+- **Gallery**: Responsive grid, centered, with pagination and image hover effects.
+- **No Card Model**: The layout is clean and open, with no card backgrounds or heavy borders.
 
 ## 📋 Prerequisites
 
@@ -80,6 +87,7 @@ The application will be available at `http://localhost:5173`
 - Continuously monitors network status (online/offline)
 - Detects connection type (4G, WiFi, etc.)
 - Updates in real-time when network changes
+- **Status is always visible in the navbar**
 
 ### 3. Image Fetching
 - Searches Unsplash for images related to user's location
@@ -109,7 +117,8 @@ This application uses modern browser APIs and requires:
 ```
 src/
 ├── App.jsx              # Main application component
-├── NetworkStatus.jsx    # Network monitoring component
+├── Navbar.jsx           # Fixed navbar with app name and network status
+├── NetworkStatus.jsx    # Network monitoring component (used in main content)
 ├── Location.jsx         # Geolocation and reverse geocoding
 ├── Gallery.jsx          # Image fetching and pagination
 ├── LazyImage.jsx        # Lazy loading image component
@@ -121,14 +130,11 @@ src/
 ### Changing Images Per Page
 Edit the `IMAGES_PER_PAGE` constant in `Gallery.jsx`:
 ```javascript
-const IMAGES_PER_PAGE = 6; 
+const IMAGES_PER_PAGE = 6;
 ```
 
-### Modifying Location Display
-Update the location extraction logic in `Location.jsx` to show different address components.
-
 ### Styling
-All styling is done inline for simplicity. You can extract styles to CSS files for better organization.
+All styling is handled in `App.css` for consistency. The navbar, gallery, and layout are responsive and modern.
 
 ## 🐛 Troubleshooting
 
