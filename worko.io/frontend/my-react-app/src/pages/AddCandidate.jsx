@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useCandidates } from '../context/CandidateContext';
 import './AddCandidate.css';
 
-const API_BASE = 'http://localhost:8000/api'; // Replace with actual backend port
+const API_BASE = 'https://candidate-refral-dashboard.onrender.com/api'; // Replace with your backend
 
 const AddCandidate = ({ onAdded }) => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', jobTitle: '', resume: null });

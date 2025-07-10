@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const API_BASE = 'http://localhost:8000/api'; // Replace with actual backend port
+const API_BASE = 'https://candidate-refral-dashboard.onrender.com/api'; // Replace with actual backend port
 
 const Register = ({ onRegister }) => {
   const [name, setName] = useState('');
