@@ -1,0 +1,403 @@
+/* Dashboard Container */
+.dashboard-container {
+  margin-left: 280px;
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: margin-left 0.3s ease;
+}
+
+/* Quick Stats Section */
+.dashboard-quickstats {
+  background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg-alt, var(--card-bg)) 100%);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--input-border);
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-quickstats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light, var(--accent)) 100%);
+}
+
+.dashboard-quickstats h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dashboard-quickstats-total {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 1.5rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-quickstats-label {
+  color: var(--text-secondary, #888);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Search Bar */
+.dashboard-searchbar {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dashboard-searchbar input,
+.dashboard-searchbar select {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  border: 2px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-searchbar input:focus,
+.dashboard-searchbar select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb, 59, 130, 246), 0.1);
+}
+
+.dashboard-searchbar input {
+  min-width: 280px;
+  flex: 1;
+}
+
+.dashboard-searchbar select {
+  min-width: 150px;
+}
+
+/* Candidate Cards Grid */
+.dashboard-candidate-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-candidate-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--input-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-candidate-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light, var(--accent)) 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-candidate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-candidate-card:hover::before {
+  transform: scaleX(1);
+}
+
+.dashboard-candidate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.dashboard-candidate-info {
+  flex: 1;
+}
+
+.dashboard-candidate-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-candidate-job {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-candidate-email {
+  color: var(--text-secondary, #888);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-candidate-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--input-border);
+}
+
+.dashboard-candidate-date {
+  color: var(--text-secondary, #888);
+  font-size: 0.85rem;
+}
+
+.dashboard-candidate-status {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-candidate-status::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.dashboard-candidate-status.pending {
+  color: #ff8c00;
+  background: rgba(255, 140, 0, 0.1);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+.dashboard-candidate-status.reviewed {
+  color: var(--accent);
+  background: rgba(var(--accent-rgb, 59, 130, 246), 0.1);
+  border: 1px solid rgba(var(--accent-rgb, 59, 130, 246), 0.3);
+}
+
+.dashboard-candidate-status.hired {
+  color: var(--success, #10b981);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.dashboard-candidate-status.rejected {
+  color: var(--danger, #ef4444);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Action Buttons */
+.dashboard-candidate-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dashboard-candidate-actions button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dashboard-candidate-actions .btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.dashboard-candidate-actions .btn-secondary {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--input-border);
+}
+
+.dashboard-candidate-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard-candidate-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .dashboard-quickstats {
+    padding: 2rem;
+  }
+  
+  .dashboard-quickstats-total {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+    margin-left: 260px;
+  }
+  
+  .dashboard-candidate-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .dashboard-searchbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .dashboard-searchbar input {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+  
+  .dashboard-candidate-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-quickstats {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dashboard-quickstats-total {
+    font-size: 2rem;
+  }
+  
+  .dashboard-searchbar {
+    gap: 0.8rem;
+  }
+  
+  .dashboard-searchbar input,
+  .dashboard-searchbar select {
+    padding: 0.8rem 1rem;
+  }
+  
+  .dashboard-candidate-card {
+    padding: 1.2rem;
+  }
+  
+  .dashboard-candidate-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .dashboard-candidate-meta {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .dashboard-quickstats {
+    padding: 1.2rem;
+  }
+  
+  .dashboard-quickstats h3 {
+    font-size: 1.1rem;
+  }
+  
+  .dashboard-quickstats-total {
+    font-size: 1.8rem;
+  }
+  
+  .dashboard-candidate-card {
+    padding: 1rem;
+  }
+  
+  .dashboard-candidate-name {
+    font-size: 1.1rem;
+  }
+  
+  .dashboard-candidate-actions {
+    flex-direction: column;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .dashboard-quickstats {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  .dashboard-candidate-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dashboard-candidate-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .dashboard-candidate-card {
+    border: 2px solid var(--input-border);
+  }
+  
+  .dashboard-candidate-status {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-candidate-card,
+  .dashboard-candidate-card::before,
+  .dashboard-searchbar input,
+  .dashboard-searchbar select {
+    transition: none;
+  }
+  
+  .dashboard-candidate-card:hover {
+    transform: none;
+  }
+}

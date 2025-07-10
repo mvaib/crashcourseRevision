@@ -1,0 +1,381 @@
+/* Add Candidate Container */
+.add-candidate-container {
+  margin-left: 280px;
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: margin-left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-candidate-title {
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+.add-candidate-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light, var(--accent)) 100%);
+  border-radius: 2px;
+}
+
+/* Form Container */
+.add-candidate-form {
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--input-border);
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-candidate-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light, var(--accent)) 100%);
+}
+
+/* Form Grid Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Labels */
+.add-candidate-form label {
+  color: var(--text);
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.label-required::after {
+  content: '*';
+  color: var(--danger, #ef4444);
+  margin-left: 4px;
+}
+
+/* Input Fields */
+.add-candidate-form input,
+.add-candidate-form select,
+.add-candidate-form textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 2px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.add-candidate-form input:focus,
+.add-candidate-form select:focus,
+.add-candidate-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb, 59, 130, 246), 0.1);
+  transform: translateY(-1px);
+}
+
+.add-candidate-form input::placeholder,
+.add-candidate-form textarea::placeholder {
+  color: var(--text-secondary, #888);
+  opacity: 0.7;
+}
+
+.add-candidate-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* File Input Styling */
+.file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.file-input-wrapper input[type="file"] {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.file-input-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border: 2px dashed var(--input-border);
+  border-radius: 12px;
+  background: var(--input-bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-input-label:hover {
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb, 59, 130, 246), 0.05);
+}
+
+.file-input-icon {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* Message Styles */
+.form-message {
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.form-error {
+  color: var(--danger, #ef4444);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.form-success {
+  color: var(--success, #10b981);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.form-warning {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Submit Button */
+.add-candidate-form button {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark, var(--accent)) 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(var(--accent-rgb, 59, 130, 246), 0.3);
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-candidate-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.add-candidate-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(var(--accent-rgb, 59, 130, 246), 0.4);
+}
+
+.add-candidate-form button:hover::before {
+  left: 100%;
+}
+
+.add-candidate-form button:active {
+  transform: translateY(0);
+}
+
+.add-candidate-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.add-candidate-form button:disabled::before {
+  display: none;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 2px solid var(--input-border);
+}
+
+.btn-secondary:hover {
+  background: var(--input-bg);
+  border-color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .add-candidate-container {
+    margin-left: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-candidate-container {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+  
+  .add-candidate-form {
+    padding: 2rem;
+    max-width: 100%;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .add-candidate-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-candidate-container {
+    padding: 1rem;
+  }
+  
+  .add-candidate-form {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .add-candidate-title {
+    font-size: 1.8rem;
+  }
+  
+  .add-candidate-form input,
+  .add-candidate-form select,
+  .add-candidate-form textarea {
+    padding: 0.9rem 1rem;
+  }
+  
+  .add-candidate-form button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .add-candidate-form {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+  }
+  
+  .file-input-label:hover {
+    background: rgba(var(--accent-rgb, 59, 130, 246), 0.1);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .add-candidate-form input,
+  .add-candidate-form select,
+  .add-candidate-form textarea {
+    border-width: 3px;
+  }
+  
+  .form-message {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .add-candidate-form input,
+  .add-candidate-form select,
+  .add-candidate-form textarea,
+  .add-candidate-form button {
+    transition: none;
+  }
+  
+  .add-candidate-form button:hover {
+    transform: none;
+  }
+  
+  .loading-spinner {
+    animation: none;
+  }
+}
