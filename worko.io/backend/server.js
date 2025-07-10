@@ -14,11 +14,7 @@ const startServer = async () => {
 
     app.use(express.json());
 
-    app.use(cors({
-        origin: 'https://candidate-refral-dashboard.netlify.app/',
-        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-        credentials: true
-      }));
+    app.use(cors());
       
     // app.options('*', cors({
     //     origin: 'http://localhost:5173',
