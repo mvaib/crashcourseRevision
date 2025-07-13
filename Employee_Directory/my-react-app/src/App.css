@@ -1,0 +1,4 @@
+/* i wnant some greyish and whiteish background */
+body{
+    background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
+}

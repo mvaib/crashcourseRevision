@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "firstName": "Shubham1",
+      "lastName": "Panchal",
+      "email": "shubham@gmail.com",
+      "department": "finance",
+      "role": "manager",
+      "id": "c1c4"
+    },
+    {
+      "id": "2c49",
+      "firstName": "Ankita",
+      "lastName": "Mane",
+      "email": "ankita@gmail.com",
+      "department": "it",
+      "role": "deverloper"
+    },
+    {
+      "firstName": "Ranjeet",
+      "lastName": "Vishwakarma",
+      "email": "ranjeet@gmail.com",
+      "department": "it",
+      "role": "deverloper",
+      "id": "9ddf"
+    },
+    {
+      "firstName": "Vaibhav",
+      "lastName": "Mane",
+      "email": "mvaibhav596@gmail.com",
+      "department": "hr",
+      "role": "manager",
+      "id": "cb52"
+    },
+    {
+      "id": "1861",
+      "firstName": "Ram",
+      "lastName": "Raj",
+      "email": "ram@gmail.com",
+      "department": "hr",
+      "role": "manager"
+    },
+    {
+      "id": "967d",
+      "firstName": "Shila",
+      "lastName": "Maske",
+      "email": "shila@gmail.com",
+      "department": "finance",
+      "role": "admin"
+    }
+  ]
+}

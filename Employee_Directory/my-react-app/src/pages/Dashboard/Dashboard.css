@@ -1,0 +1,262 @@
+/* Dashboard.css */
+.dashboard-container {
+    /* border: 2px solid red; */
+    max-width: 1800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 10rem;
+  }
+  
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+  }
+  
+  .dashboard-header-left {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .sort, .show {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .sort label, .show label {
+    font-weight: 600;
+    color: #212529;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+  
+  .sort select, .show select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    background: white;
+    color: #212529;
+    cursor: pointer;
+    min-width: 140px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23495057' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25em 1.25em;
+    padding-right: 2.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sort select:focus, .show select:focus {
+    border-color: #495057;
+    box-shadow: 0 0 0 3px rgba(73, 80, 87, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  .sort select:hover, .show select:hover {
+    border-color: #6c757d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  .Add-btn {
+    padding: 0.875rem 2rem;
+    border: none;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: white;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 16px rgba(26, 26, 26, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .Add-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .Add-btn:hover::before {
+    left: 100%;
+  }
+  
+  .Add-btn:hover {
+    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(26, 26, 26, 0.4);
+  }
+  
+  .dashboard-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    /* border: 2px solid red; */
+  }
+  
+  /* Pagination - Removed borders and enhanced styling */
+  .pagination {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+  }
+  
+  .pagination button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: white;
+    color: #495057;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .pagination button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(73, 80, 87, 0.1), transparent);
+    transition: left 0.3s;
+  }
+  
+  .pagination button:hover:not(:disabled)::before {
+    left: 100%;
+  }
+  
+  .pagination button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #495057, #6c757d);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(73, 80, 87, 0.3);
+  }
+  
+  .pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #f8f9fa;
+    color: #adb5bd;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .pagination span {
+    color: #495057;
+    font-weight: 700;
+    padding: 0 1.5rem;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #495057, #6c757d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .dashboard-body {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-body {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .dashboard-header {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+    
+    .dashboard-header-left {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+    
+    .sort, .show {
+      width: 100%;
+    }
+    
+    .sort select, .show select {
+      width: 100%;
+    }
+    
+    .Add-btn {
+      width: 100%;
+    }
+    
+    .pagination {
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard-body {
+      grid-template-columns: 1fr;
+    }
+    
+    .dashboard-container {
+      padding: 0 0.5rem;
+    }
+    
+    .dashboard-header {
+      padding: 1rem;
+    }
+    
+    .pagination {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    
+    .pagination button {
+      width: 100%;
+      min-width: 120px;
+    }
+  }
